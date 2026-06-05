@@ -34,7 +34,7 @@
   <meta property="twitter:image" content="https://www.wmxtecnologia.com.br/assets/img/og-image.png">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
   <link rel="apple-touch-icon" href="assets/img/favicon.svg">
 
   <!-- Preconnect e Fontes do Google -->
@@ -44,7 +44,66 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
     rel="stylesheet">
 
-  <!-- Estilos Estáticos Otimizados (Compilados via Tailwind) -->
+  <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            outfit: ['Outfit', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              dark: '#080b11',      /* Fundo ultra dark */
+              darker: '#05070a',    /* Seções secundárias escuras */
+              card: '#101524',      /* Cards */
+              electric: '#2b3fd6',  /* Azul royal dos CTAs */
+              glow: '#4f46e5',      /* Roxo de brilho */
+              textMuted: '#94a3b8', /* Cinza slate */
+            },
+            primary: {
+              destaque: '#FED0B3',
+              100: '#3333F9',
+              70: '#4D4DFA',
+              50: '#8080FB',
+              30: '#B3B3FD',
+            },
+            secundary: {
+              destaque: '#FC6300',
+              100: '#FD8233',
+              70: '#FD924D',
+              50: '#FDB180',
+              30: '#FED0B3',
+            }
+          },
+          boxShadow: {
+            'glow-primary': '0 0 25px rgba(51, 51, 249, 0.25)',
+            'glow-secundary': '0 0 25px rgba(252, 99, 0, 0.25)',
+          },
+          animation: {
+            'float-slow': 'float 6s ease-in-out infinite',
+            'float-medium': 'float 4s ease-in-out infinite',
+            'pulse-subtle': 'pulseSubtle 3s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+            pulseSubtle: {
+              '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
+              '50%': { opacity: '0.8', transform: 'scale(1.05)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Estilos Customizados e Variáveis Globais (Sem build) -->
   <link rel="stylesheet" href="assets/css/style.css">
 
   <!-- Preload do Fundo do Hero (Melhoria do LCP) -->
@@ -90,7 +149,7 @@
 
   <!-- Acessibilidade: Pular para o conteúdo principal -->
   <a href="#main-content"
-    class="sr-only focus:not-sr-only absolute top-4 left-4 z-50 bg-indigo-600 text-white px-4 py-2 rounded-md font-medium shadow-lg focus-ring">
+    class="sr-only focus:not-sr-only absolute top-4 left-4 z-50 bg-primary-100 text-white px-4 py-2 rounded-md font-medium shadow-lg focus-ring">
     Pular para o conteúdo principal
   </a>
 
@@ -101,22 +160,8 @@
 
       <!-- Logo WMX -->
       <a href="#" class="flex items-center space-x-2 focus-ring rounded-lg p-1" aria-label="WMX Tecnologia Home">
-        <div class="bg-white px-4 py-2 rounded-md flex items-center justify-center shadow-sm">
-          <svg class="h-8 w-auto" viewBox="0 0 160 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"
-            aria-label="WMX Logo">
-            <!-- Curve/Swoosh Laranja superior -->
-            <path d="M5 25C30 8 70 5 155 12" stroke="#ea580c" stroke-width="4" stroke-linecap="round" />
-            <!-- Curve/Swoosh Azul inferior -->
-            <path d="M5 28C40 38 85 36 155 24" stroke="#1d4ed8" stroke-width="3.5" stroke-linecap="round" />
-            <!-- Letra W (Laranja) -->
-            <path d="M22 10L27.5 28L32 14L36.5 28L42 10" stroke="#ea580c" stroke-width="4.5" stroke-linejoin="round"
-              stroke-linecap="round" />
-            <!-- Letra M (Azul Escuro) -->
-            <path d="M49 28V10L56 22L63 10V28" stroke="#1d4ed8" stroke-width="4.5" stroke-linejoin="round"
-              stroke-linecap="round" />
-            <!-- Letra X (Azul Escuro) -->
-            <path d="M70 10L82 28M82 10L70 28" stroke="#1d4ed8" stroke-width="4.5" stroke-linecap="round" />
-          </svg>
+        <div class="py-2 rounded-md flex items-center justify-center shadow-sm">
+          <img src="/assets/img/logo.svg" alt="">
         </div>
       </a>
 
@@ -129,7 +174,7 @@
         <a href="#seguranca"
           class="text-slate-300 hover:text-white transition-colors duration-200 focus-ring font-medium">Segurança</a>
         <a href="#contato-form"
-          class="bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2.5 rounded-lg font-semibold transition-all duration-200 shadow-md hover:shadow-lg focus-ring">Solicitar
+          class="bg-primary-100 hover:bg-primary-70 text-white px-5 py-2.5 rounded-lg font-semibold transition-all duration-200 shadow-md hover:shadow-lg focus-ring">Solicitar
           Orçamento</a>
       </nav>
 
@@ -162,7 +207,7 @@
       <a href="#seguranca"
         class="mobile-nav-link text-slate-300 hover:text-white py-2 border-b border-slate-800/40 text-lg transition-colors">Segurança</a>
       <a href="#contato-form"
-        class="mobile-nav-link bg-indigo-600 text-white text-center py-3 rounded-lg font-semibold shadow-md transition-colors hover:bg-indigo-500">Solicitar
+        class="mobile-nav-link bg-primary-100 text-white text-center py-3 rounded-lg font-semibold shadow-md transition-colors hover:bg-primary-70">Solicitar
         Orçamento</a>
     </div>
   </header>
@@ -182,8 +227,8 @@
 
       <!-- Elementos Iconográficos Flutuantes -->
       <div class="absolute top-[20%] left-[10%] md:left-[15%] opacity-30 animate-float-slow hidden sm:block">
-        <div class="p-3 bg-indigo-500/10 rounded-full border border-indigo-500/20 backdrop-blur-sm">
-          <svg class="w-8 h-8 text-indigo-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        <div class="p-3 bg-primary-50/10 rounded-full border border-primary-50/20 backdrop-blur-sm">
+          <svg class="w-8 h-8 text-primary-30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round">
             <path
               d="M17.5 19A3.5 3.5 0 0 0 21 15.5c0-2.79-2.54-4.5-5-4.5-.47-.47-1.12-.75-1.85-.75-.58 0-1.1.17-1.54.46A4.5 4.5 0 0 0 4 12.5C4 16 7 19 10.5 19z">
@@ -192,8 +237,8 @@
         </div>
       </div>
       <div class="absolute top-[35%] right-[5%] md:right-[8%] opacity-25 animate-float-medium hidden sm:block">
-        <div class="p-3 bg-cyan-500/10 rounded-full border border-cyan-500/20 backdrop-blur-sm">
-          <svg class="w-7 h-7 text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        <div class="p-3 bg-secundary-50/10 rounded-full border border-secundary-50/20 backdrop-blur-sm">
+          <svg class="w-7 h-7 text-secundary-50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
           </svg>
@@ -207,24 +252,24 @@
           <!-- Lado Esquerdo: Título, Descrição e CTAs -->
           <div class="lg:col-span-7 flex flex-col items-center lg:items-start">
             <span
-              class="inline-block text-xs md:text-sm font-semibold tracking-widest text-indigo-400 uppercase mb-3 drop-shadow-md">
+              class="inline-block text-xs md:text-sm font-semibold tracking-widest text-primary-30 uppercase mb-3 drop-shadow-md">
               Conectividade & Telecom Corporativo
             </span>
             <h1
               class="font-outfit text-4xl sm:text-6xl md:text-7xl font-extrabold text-white tracking-tight leading-none mb-6">
               WMX <br>
-              <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-200 to-indigo-400">
+              <span class="bg-clip-text text-transparent bg-gradient-to-r from-secundary-100 via-primary-30 to-primary-50">
                 Tecnologia
               </span>
             </h1>
-            <p class="text-lg sm:text-2xl text-blue-300/90 font-medium max-w-2xl lg:max-w-none leading-relaxed mb-10">
+            <p class="text-lg sm:text-2xl text-secundary-30 font-medium max-w-2xl lg:max-w-none leading-relaxed mb-10">
               A tecnologia que move o seu dia a dia, hoje e amanhã. Soluções premium Panasonic integradas sob medida.
             </p>
 
             <!-- Múltiplos CTAs no Hero -->
             <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start w-full">
               <a href="#contato-form"
-                class="px-8 py-4 bg-indigo-600 hover:bg-indigo-500 text-white rounded-full font-bold text-lg shadow-xl hover:shadow-indigo-500/30 transition-all duration-300 transform hover:-translate-y-0.5 focus-ring flex items-center justify-center gap-2 group"
+                class="px-8 py-4 bg-primary-100 hover:bg-primary-70 text-white rounded-full font-bold text-lg shadow-xl hover:shadow-primary-100/30 transition-all duration-300 transform hover:-translate-y-0.5 focus-ring flex items-center justify-center gap-2 group"
                 aria-label="Solicitar orçamento de serviços">
                 Solicitar Orçamento
                 <svg class="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" viewBox="0 0 24 24"
@@ -234,7 +279,7 @@
                 </svg>
               </a>
               <a href="#sobre-nos"
-                class="px-8 py-4 bg-white/10 hover:bg-white/15 text-white rounded-full font-bold text-lg border border-white/20 hover:border-white/40 transition-all duration-300 transform hover:-translate-y-0.5 focus-ring flex items-center justify-center gap-2"
+                class="px-8 py-4 bg-secundary-50/10 hover:bg-secundary-50/20 text-secundary-30 rounded-full font-bold text-lg border border-secundary-50/20 hover:border-secundary-50/40 transition-all duration-300 transform hover:-translate-y-0.5 focus-ring flex items-center justify-center gap-2"
                 aria-label="Conhecer nossa história e equipe">
                 Sobre a Empresa
               </a>
@@ -244,7 +289,7 @@
           <!-- Lado Direito: Terminal Interativo/Preview Widget de Alta Fidelidade (Apenas Desktop) -->
           <div class="hidden lg:block lg:col-span-5 relative">
             <div
-              class="absolute -inset-4 bg-gradient-to-r from-indigo-500/20 to-blue-500/20 rounded-2xl blur-xl opacity-75 animate-pulse-subtle">
+              class="absolute -inset-4 bg-gradient-to-r from-primary-50/20 to-secundary-50/20 rounded-2xl blur-xl opacity-75 animate-pulse-subtle">
             </div>
             <div class="relative bg-slate-950/80 border border-slate-800 rounded-2xl p-6 shadow-2xl backdrop-blur-md">
 
@@ -268,11 +313,11 @@
                 </div>
                 <div class="flex justify-between items-center text-slate-400">
                   <span>Latência Média:</span>
-                  <span class="text-indigo-400">12ms (Panasonic PABX-IP)</span>
+                  <span class="text-primary-70">12ms (Panasonic PABX-IP)</span>
                 </div>
                 <div class="flex justify-between items-center text-slate-400">
                   <span>Encriptação:</span>
-                  <span class="text-blue-400">AES-256 GCM</span>
+                  <span class="text-secundary-70">AES-256 GCM</span>
                 </div>
 
                 <!-- Gráfico de Carga de Tráfego -->
@@ -282,25 +327,25 @@
                     <span>Pico: 4.8 Gbps</span>
                   </div>
                   <div class="h-12 flex items-end space-x-[3px] pt-2">
-                    <div class="w-full bg-indigo-500/20 h-[20%] rounded-t-sm"></div>
-                    <div class="w-full bg-indigo-500/30 h-[35%] rounded-t-sm"></div>
-                    <div class="w-full bg-indigo-500/40 h-[50%] rounded-t-sm"></div>
-                    <div class="w-full bg-indigo-500/50 h-[40%] rounded-t-sm"></div>
-                    <div class="w-full bg-blue-500/70 h-[70%] rounded-t-sm"></div>
-                    <div class="w-full bg-blue-500/80 h-[60%] rounded-t-sm"></div>
-                    <div class="w-full bg-indigo-400 h-[85%] rounded-t-sm"></div>
-                    <div class="w-full bg-indigo-400 h-[95%] rounded-t-sm animate-pulse"></div>
+                    <div class="w-full bg-primary-50/20 h-[20%] rounded-t-sm"></div>
+                    <div class="w-full bg-primary-50/30 h-[35%] rounded-t-sm"></div>
+                    <div class="w-full bg-primary-50/40 h-[50%] rounded-t-sm"></div>
+                    <div class="w-full bg-primary-50/50 h-[40%] rounded-t-sm"></div>
+                    <div class="w-full bg-secundary-70 h-[70%] rounded-t-sm"></div>
+                    <div class="w-full bg-secundary-100 h-[60%] rounded-t-sm"></div>
+                    <div class="w-full bg-primary-50 h-[85%] rounded-t-sm"></div>
+                    <div class="w-full bg-primary-50 h-[95%] rounded-t-sm animate-pulse"></div>
                   </div>
                 </div>
 
                 <!-- Badges Informativas -->
                 <div class="grid grid-cols-2 gap-2 pt-2 text-[10px]">
-                  <div class="bg-indigo-950/40 border border-indigo-500/20 rounded p-2 text-center">
-                    <span class="block text-indigo-400 font-bold text-xs">99.99%</span>
+                  <div class="bg-primary-100/10 border border-primary-50/20 rounded p-2 text-center">
+                    <span class="block text-primary-70 font-bold text-xs">99.99%</span>
                     <span class="text-slate-500">Uptime Garantido</span>
                   </div>
-                  <div class="bg-blue-950/40 border border-blue-500/20 rounded p-2 text-center">
-                    <span class="block text-blue-400 font-bold text-xs">100%</span>
+                  <div class="bg-secundary-100/10 border border-secundary-50/20 rounded p-2 text-center">
+                    <span class="block text-secundary-70 font-bold text-xs">100%</span>
                     <span class="text-slate-500">Suporte Premium</span>
                   </div>
                 </div>
@@ -326,7 +371,7 @@
           <!-- Lado Esquerdo: Imagem com efeito hover premium -->
           <div class="lg:col-span-5 relative group">
             <div
-              class="absolute -inset-2 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-2xl blur-lg opacity-25 group-hover:opacity-40 transition duration-500">
+              class="absolute -inset-2 bg-gradient-to-r from-primary-70 to-secundary-70 rounded-2xl blur-lg opacity-25 group-hover:opacity-40 transition duration-500">
             </div>
             <div
               class="relative overflow-hidden rounded-2xl border border-slate-700/50 aspect-[4/3] sm:aspect-[16/10] lg:aspect-square">
@@ -339,14 +384,14 @@
 
           <!-- Lado Direito: Texto -->
           <div class="lg:col-span-7 flex flex-col justify-center text-left">
-            <h2 class="font-outfit text-3xl sm:text-5xl font-bold text-indigo-400 mb-6 flex items-center">
+            <h2 class="font-outfit text-3xl sm:text-5xl font-bold text-primary-70 mb-6 flex items-center">
               Sobre Nós
-              <span class="ml-4 h-1 w-20 bg-indigo-500/50 rounded hidden sm:inline-block"></span>
+              <span class="ml-4 h-1 w-20 bg-primary-50/50 rounded hidden sm:inline-block"></span>
             </h2>
             <div class="space-y-6 text-base sm:text-lg text-slate-300 leading-relaxed font-light">
               <p>
                 A <strong class="text-white font-semibold">WMX Tecnologia Ltda</strong> é uma empresa Integradora
-                Premium autorizada <span class="text-indigo-300 font-medium">Panasonic</span> para <strong
+                Premium autorizada <span class="text-primary-30 font-medium">Panasonic</span> para <strong
                   class="text-white font-semibold">COMERCIALIZAR</strong> e prestar <strong
                   class="text-white font-semibold">SERVIÇOS TÉCNICOS</strong> em seus produtos profissionais.
               </p>
@@ -361,7 +406,7 @@
             <!-- Adicionados CTAs na seção Sobre Nós -->
             <div class="mt-10 flex flex-wrap gap-4">
               <a href="#contato-form"
-                class="inline-flex items-center px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-lg shadow-lg hover:shadow-indigo-500/20 transition-all duration-300 transform hover:-translate-y-0.5 focus-ring group">
+                class="inline-flex items-center px-6 py-3 bg-primary-100 hover:bg-primary-70 text-white font-semibold rounded-lg shadow-lg hover:shadow-primary-100/20 transition-all duration-300 transform hover:-translate-y-0.5 focus-ring group">
                 Falar com Especialista
                 <svg class="w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-1"
                   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
@@ -371,7 +416,7 @@
                 </svg>
               </a>
               <a href="#procedencia"
-                class="inline-flex items-center px-6 py-3 bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white font-semibold rounded-lg border border-slate-800 hover:border-slate-700 transition-all duration-300 transform hover:-translate-y-0.5 focus-ring">
+                class="inline-flex items-center px-6 py-3 bg-secundary-50/10 hover:bg-secundary-50/20 text-secundary-30 hover:text-white font-semibold rounded-lg border border-secundary-50/20 hover:border-secundary-50/40 transition-all duration-300 transform hover:-translate-y-0.5 focus-ring">
                 Nossos Diferenciais
               </a>
             </div>
@@ -383,9 +428,9 @@
 
 
     <!-- Seção 3: Banner CTA & Estatísticas 1 -->
-    <section class="bg-indigo-600 text-white relative py-16 overflow-hidden shadow-2xl">
+    <section class="bg-primary-100 text-white relative py-16 overflow-hidden shadow-2xl">
       <!-- Glow decorativo interno -->
-      <div class="absolute inset-0 bg-gradient-to-r from-blue-600/30 to-indigo-800/30 opacity-60"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-secundary-100/30 to-primary-100/30 opacity-60"></div>
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-12">
@@ -404,7 +449,7 @@
                 </svg>
               </div>
               <span class="font-outfit text-4xl font-extrabold tracking-tight mb-1">+10</span>
-              <span class="text-indigo-100 font-medium text-sm">Produtos no Catálogo</span>
+              <span class="text-primary-30 font-medium text-sm">Produtos no Catálogo</span>
             </div>
 
             <!-- Estatística 2 -->
@@ -421,7 +466,7 @@
                 </svg>
               </div>
               <span class="font-outfit text-4xl font-extrabold tracking-tight mb-1">24/7</span>
-              <span class="text-indigo-100 font-medium text-sm">Suporte Técnico</span>
+              <span class="text-primary-30 font-medium text-sm">Suporte Técnico</span>
             </div>
 
             <!-- Estatística 3 -->
@@ -437,16 +482,16 @@
                 </svg>
               </div>
               <span class="font-outfit text-4xl font-extrabold tracking-tight mb-1">+10</span>
-              <span class="text-indigo-100 font-medium text-sm">Clientes Atendidos</span>
+              <span class="text-primary-30 font-medium text-sm">Clientes Atendidos</span>
             </div>
           </div>
 
           <!-- Lado do Botão CTA (Alinhado lateralmente no Desktop) -->
           <div class="flex flex-col sm:flex-row lg:flex-col items-center justify-center gap-4 shrink-0">
             <a href="https://wa.me/seunumerodecelular" target="_blank" rel="noopener noreferrer"
-              class="w-full sm:w-auto px-8 py-4 bg-white text-indigo-700 hover:bg-slate-50 hover:text-indigo-800 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 focus-ring flex items-center justify-center gap-2 group"
+              class="w-full sm:w-auto px-8 py-4 bg-white text-primary-100 hover:bg-slate-50 hover:text-primary-70 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 focus-ring flex items-center justify-center gap-2 group"
               aria-label="Entre em contato via WhatsApp (abre em nova guia)">
-              <svg class="w-5 h-5 text-indigo-700" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              <svg class="w-5 h-5 text-primary-100" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path
                   d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
@@ -476,7 +521,7 @@
     <section class="py-24 bg-brand-dark relative overflow-hidden">
       <!-- Glow de fundo sutil de luz roxo/azul -->
       <div
-        class="absolute top-[20%] left-[50%] -translate-x-1/2 w-[70%] h-[40%] bg-indigo-500/5 rounded-full blur-[150px] pointer-events-none">
+        class="absolute top-[20%] left-[50%] -translate-x-1/2 w-[70%] h-[40%] bg-primary-50/5 rounded-full blur-[150px] pointer-events-none">
       </div>
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -486,14 +531,14 @@
 
           <!-- Card 1: Procedência e Originalidade -->
           <div id="procedencia"
-            class="card-border-glow shadow-glow-indigo transition-all duration-300 hover:-translate-y-1.5 flex">
+            class="card-border-glow-primary shadow-glow-primary transition-all duration-300 hover:-translate-y-1.5 flex">
             <div
               class="p-8 sm:p-12 text-center md:text-left flex flex-col justify-between items-center md:items-start w-full">
               <div>
                 <!-- Ícone Check duplo circular inline -->
                 <div
-                  class="inline-flex items-center justify-center p-5 bg-indigo-500/10 rounded-2xl mb-8 border border-indigo-500/25">
-                  <svg class="w-10 h-10 text-indigo-400" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  class="inline-flex items-center justify-center p-5 bg-primary-50/10 rounded-2xl mb-8 border border-primary-50/25">
+                  <svg class="w-10 h-10 text-primary-30" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                     stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <polyline points="20 6 9 17 4 12"></polyline>
                     <polyline points="15 6 9 12 7.5 10.5" class="opacity-60"></polyline>
@@ -513,7 +558,7 @@
               <!-- CTA local dentro do card -->
               <div class="mt-8 w-full">
                 <a href="#contato-form"
-                  class="inline-flex items-center text-indigo-400 hover:text-indigo-300 font-semibold group/btn transition-colors focus-ring rounded p-1">
+                  class="inline-flex items-center text-primary-30 hover:text-primary-50 font-semibold group/btn transition-colors focus-ring rounded p-1">
                   Verificar Certificações de Originalidade
                   <svg class="w-4 h-4 ml-1.5 transition-transform duration-200 group-hover/btn:translate-x-1"
                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
@@ -527,14 +572,14 @@
 
           <!-- Card 2: Segurança no Envio e Transação -->
           <div id="seguranca"
-            class="card-border-glow shadow-glow-blue transition-all duration-300 hover:-translate-y-1.5 flex">
+            class="card-border-glow-secundary shadow-glow-secundary transition-all duration-300 hover:-translate-y-1.5 flex">
             <div
               class="p-8 sm:p-12 text-center md:text-left flex flex-col justify-between items-center md:items-start w-full">
               <div>
                 <!-- Ícone Escudo inline -->
                 <div
-                  class="inline-flex items-center justify-center p-5 bg-blue-500/10 rounded-2xl mb-8 border border-blue-500/25">
-                  <svg class="w-10 h-10 text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  class="inline-flex items-center justify-center p-5 bg-secundary-50/10 rounded-2xl mb-8 border border-secundary-50/25">
+                  <svg class="w-10 h-10 text-secundary-70" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path
                       d="M20 13c0 5-3.5 7.5-7.66 9.7a1 1 0 0 1-.68 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 .76-.97l8.24-2.28a1 1 0 0 1 .64 0l8.24 2.28A1 1 0 0 1 20 6z">
@@ -555,7 +600,7 @@
               <!-- CTA local dentro do card -->
               <div class="mt-8 w-full">
                 <a href="#contato-form"
-                  class="inline-flex items-center text-blue-400 hover:text-blue-300 font-semibold group/btn transition-colors focus-ring rounded p-1">
+                  class="inline-flex items-center text-secundary-70 hover:text-secundary-50 font-semibold group/btn transition-colors focus-ring rounded p-1">
                   Saiba mais sobre Garantia de Envio
                   <svg class="w-4 h-4 ml-1.5 transition-transform duration-200 group-hover/btn:translate-x-1"
                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
@@ -579,7 +624,7 @@
     <section id="contato-form" class="py-24 bg-brand-darker relative overflow-hidden border-t border-slate-900">
       <!-- Glow sutil lateral -->
       <div
-        class="absolute right-0 bottom-0 w-[50%] h-[50%] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none">
+        class="absolute right-0 bottom-0 w-[50%] h-[50%] bg-secundary-50/5 rounded-full blur-[120px] pointer-events-none">
       </div>
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -587,7 +632,7 @@
 
           <!-- Lado Esquerdo: Chamada e Canais Rápidos -->
           <div class="lg:col-span-5 text-left">
-            <span class="inline-block text-xs md:text-sm font-semibold tracking-widest text-indigo-400 uppercase mb-3">
+            <span class="inline-block text-xs md:text-sm font-semibold tracking-widest text-primary-30 uppercase mb-3">
               Fale Conosco
             </span>
             <h2 class="font-outfit text-3xl sm:text-5xl font-bold text-white mb-6">
@@ -601,8 +646,8 @@
             <!-- Canais Rápidos de CTA -->
             <div class="space-y-4">
               <a href="mailto:contato@wmxtecnologia.com.br"
-                class="flex items-center p-4 bg-slate-900/50 hover:bg-slate-900 border border-slate-800/80 rounded-xl hover:border-indigo-500/30 transition-all duration-300 focus-ring group">
-                <div class="bg-indigo-500/10 p-2.5 rounded-lg border border-indigo-500/20 text-indigo-400 mr-4">
+                class="flex items-center p-4 bg-slate-900/50 hover:bg-slate-900 border border-slate-800/80 rounded-xl hover:border-primary-50/30 transition-all duration-300 focus-ring group">
+                <div class="bg-primary-50/10 p-2.5 rounded-lg border border-primary-50/20 text-primary-30 mr-4">
                   <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round">
                     <rect width="20" height="16" x="2" y="4" rx="2"></rect>
@@ -612,13 +657,13 @@
                 <div>
                   <span class="block text-xs text-slate-500 font-mono">E-MAIL CORPORATIVO</span>
                   <span
-                    class="text-sm font-semibold text-white group-hover:text-indigo-400 transition-colors">contato@wmxtecnologia.com.br</span>
+                    class="text-sm font-semibold text-white group-hover:text-primary-70 transition-colors">contato@wmxtecnologia.com.br</span>
                 </div>
               </a>
 
               <a href="tel:+5511999999999"
-                class="flex items-center p-4 bg-slate-900/50 hover:bg-slate-900 border border-slate-800/80 rounded-xl hover:border-blue-500/30 transition-all duration-300 focus-ring group">
-                <div class="bg-blue-500/10 p-2.5 rounded-lg border border-blue-500/20 text-blue-400 mr-4">
+                class="flex items-center p-4 bg-slate-900/50 hover:bg-slate-900 border border-slate-800/80 rounded-xl hover:border-secundary-50/30 transition-all duration-300 focus-ring group">
+                <div class="bg-secundary-50/10 p-2.5 rounded-lg border border-secundary-50/20 text-secundary-70 mr-4">
                   <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round">
                     <path
@@ -628,7 +673,7 @@
                 </div>
                 <div>
                   <span class="block text-xs text-slate-500 font-mono">SUPORTE TELEFÔNICO</span>
-                  <span class="text-sm font-semibold text-white group-hover:text-blue-400 transition-colors">(11)
+                  <span class="text-sm font-semibold text-white group-hover:text-secundary-70 transition-colors">(11)
                     99999-9999</span>
                 </div>
               </a>
@@ -649,13 +694,13 @@
                       class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Nome
                       Completo</label>
                     <input type="text" id="form-name" required placeholder="Ex: João Silva"
-                      class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all duration-200">
+                      class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-primary-100 focus:ring-1 focus:ring-primary-100 transition-all duration-200">
                   </div>
                   <div>
                     <label for="form-company"
                       class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Empresa</label>
                     <input type="text" id="form-company" placeholder="Ex: Minha Empresa"
-                      class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all duration-200">
+                      class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-primary-100 focus:ring-1 focus:ring-primary-100 transition-all duration-200">
                   </div>
                 </div>
 
@@ -665,14 +710,14 @@
                       class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">E-mail
                       Profissional</label>
                     <input type="email" id="form-email" required placeholder="joao@empresa.com"
-                      class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all duration-200">
+                      class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-primary-100 focus:ring-1 focus:ring-primary-100 transition-all duration-200">
                   </div>
                   <div>
                     <label for="form-interest"
                       class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Solução
                       Desejada</label>
                     <select id="form-interest"
-                      class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all duration-200">
+                      class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-primary-100 focus:ring-1 focus:ring-primary-100 transition-all duration-200">
                       <option value="pabx">Telecomunicações PABX</option>
                       <option value="cftv">Segurança Eletrônica CFTV</option>
                       <option value="both">Ambas as Soluções</option>
@@ -687,11 +732,11 @@
                     (Opcional)</label>
                   <textarea id="form-message" rows="3"
                     placeholder="Descreva brevemente suas necessidades de comunicação ou segurança..."
-                    class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all duration-200"></textarea>
+                    class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-primary-100 focus:ring-1 focus:ring-primary-100 transition-all duration-200"></textarea>
                 </div>
 
                 <button type="submit"
-                  class="w-full py-4 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-indigo-500/20 transform hover:-translate-y-0.5 focus-ring flex items-center justify-center gap-2 group">
+                  class="w-full py-4 bg-primary-100 hover:bg-primary-70 text-white rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-primary-100/20 transform hover:-translate-y-0.5 focus-ring flex items-center justify-center gap-2 group">
                   Enviar Solicitação
                   <svg
                     class="w-5 h-5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"

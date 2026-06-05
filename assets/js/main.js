@@ -60,9 +60,9 @@ window.addEventListener('scroll', () => {
   const header = document.querySelector('header');
   if (header) {
     if (window.scrollY > 10) {
-      header.classList.add('shadow-lg', 'border-b', 'border-indigo-500/10');
+      header.classList.add('shadow-lg', 'border-b', 'border-primary-100/10');
     } else {
-      header.classList.remove('shadow-lg', 'border-b', 'border-indigo-500/10');
+      header.classList.remove('shadow-lg', 'border-b', 'border-primary-100/10');
     }
   }
 });
@@ -92,7 +92,7 @@ if (leadForm) {
       // Criar Toast Acessível dinamicamente com SVG inline
       const toast = document.createElement('div');
       toast.setAttribute('role', 'alert');
-      toast.className = 'fixed bottom-5 right-5 z-50 bg-indigo-900 border-2 border-indigo-500 text-white px-6 py-4 rounded-xl shadow-2xl flex items-center gap-3 transition-all duration-500 transform translate-y-10 opacity-0';
+      toast.className = 'fixed bottom-5 right-5 z-50 bg-slate-950 border-2 border-primary-50 text-white px-6 py-4 rounded-xl shadow-2xl flex items-center gap-3 transition-all duration-500 transform translate-y-10 opacity-0';
       toast.innerHTML = `
         <svg class="w-6 h-6 text-emerald-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
