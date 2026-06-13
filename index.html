@@ -46,64 +46,8 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
     rel="stylesheet" media="print" onload="this.media='all'">
 
-  <!-- Tailwind CSS Play CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            outfit: ['Outfit', 'sans-serif'],
-          },
-          colors: {
-            brand: {
-              dark: '#080b11',      /* Fundo ultra dark */
-              darker: '#05070a',    /* Seções secundárias escuras */
-              card: '#101524',      /* Cards */
-              electric: '#2b3fd6',  /* Azul royal dos CTAs */
-              glow: '#4f46e5',      /* Roxo de brilho */
-              textMuted: '#94a3b8', /* Cinza slate */
-            },
-            primary: {
-              destaque: '#FED0B3',
-              100: '#3333F9',
-              70: '#4D4DFA',
-              50: '#8080FB',
-              30: '#B3B3FD',
-            },
-            secundary: {
-              destaque: '#FC6300',
-              100: '#FD8233',
-              70: '#FD924D',
-              50: '#FDB180',
-              30: '#FED0B3',
-            }
-          },
-          boxShadow: {
-            'glow-primary': '0 0 25px rgba(51, 51, 249, 0.25)',
-            'glow-secundary': '0 0 25px rgba(252, 99, 0, 0.25)',
-          },
-          animation: {
-            'float-slow': 'float 6s ease-in-out infinite',
-            'float-medium': 'float 4s ease-in-out infinite',
-            'pulse-subtle': 'pulseSubtle 3s ease-in-out infinite',
-          },
-          keyframes: {
-            float: {
-              '0%, 100%': { transform: 'translateY(0px)' },
-              '50%': { transform: 'translateY(-10px)' },
-            },
-            pulseSubtle: {
-              '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
-              '50%': { opacity: '0.8', transform: 'scale(1.05)' },
-            }
-          }
-        }
-      }
-    }
-  </script>
+  <!-- Compiled Tailwind CSS (Optimized Production Stylesheet) -->
+  <link rel="stylesheet" href="assets/css/tailwind.css">
 
   <!-- Estilos Customizados e Variáveis Globais (Sem build) -->
   <link rel="stylesheet" href="assets/css/style.css">
@@ -112,7 +56,7 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 
   <!-- Preload do Fundo do Hero (Apenas Desktop para poupar banda no Mobile) -->
-  <link rel="preload" as="image" href="assets/img/hero-bg.webp" fetchpriority="high" type="image/webp">
+  <link rel="preload" as="image" href="assets/img/hero-bg.png" fetchpriority="high" media="(min-width: 1024px)">
 
   <!-- Scripts Interativos Diferidos (Não bloqueiam renderização) -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
@@ -169,7 +113,8 @@
       <a href="#" class="flex items-center space-x-2 focus-ring rounded-lg p-1 w-[40%] md:w-[20%]"
         aria-label="WMX Tecnologia Home">
         <div class="py-2 rounded-md flex items-center justify-center shadow-sm w-full">
-          <img src="/assets/img/logoBlack.jpg" alt="Logo WMX" class="w-[60%] md:w-[50%] rounded-xl" width="160" height="50">
+          <img src="/assets/img/logoBlack.jpg" alt="Logo WMX" class="w-[60%] md:w-[50%] rounded-xl" width="160"
+            height="50">
         </div>
       </a>
 
@@ -227,7 +172,7 @@
       data-aos="fade-in">
       <!-- Imagem de Background com Overlay Gradiente -->
       <div class="absolute inset-0 z-0">
-        <img src="assets/img/hero-bg.webp" alt="Conexões digitais brilhantes em uma silhueta de cidade futurista"
+        <img src="assets/img/hero-bg.png" alt="Conexões digitais brilhantes em uma silhueta de cidade futurista"
           class="w-full h-full object-cover opacity-30 filter brightness-90" width="1920" height="1080"
           fetchpriority="high" />
         <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/70 to-brand-dark/20"></div>
@@ -385,7 +330,7 @@
             </div>
             <div
               class="relative overflow-hidden rounded-2xl border border-slate-700/50 aspect-[4/3] sm:aspect-[16/10] lg:aspect-square">
-              <img src="assets/img/about-us.webp"
+              <img src="assets/img/about-us.png"
                 alt="Dois engenheiros de TI colaborando em um tablet dentro de um data center"
                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" width="600"
                 height="600" loading="lazy" />
@@ -401,34 +346,40 @@
             <div class="space-y-6 text-base sm:text-lg text-slate-300 leading-relaxed font-light">
               <p>
                 A <strong class="text-white font-semibold">WMX Tecnologia Ltda</strong> é uma empresa Integradora
-                Premium autorizada <span class="text-primary-30 font-medium">Panasonic</span> para comercializar e prestar <strong
-                  class="text-white font-semibold">SERVIÇOS TÉCNICOS</strong> em seus produtos profissionais.
+                Premium autorizada <span class="text-primary-30 font-medium">Panasonic</span> para comercializar e
+                prestar <strong class="text-white font-semibold">SERVIÇOS TÉCNICOS</strong> em seus produtos
+                profissionais.
               </p>
               <p>
-                Atuamos com maestria técnica e compromisso, entregando soluções completas de alta performance que asseguram estabilidade e eficiência para a infraestrutura corporativa do seu negócio.
+                Atuamos com maestria técnica e compromisso, entregando soluções completas de alta performance que
+                asseguram estabilidade e eficiência para a infraestrutura corporativa do seu negócio.
               </p>
 
               <!-- Missão & Onde Atuamos Grid -->
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
                 <!-- Card Missão -->
-                <div class="p-5 rounded-xl bg-slate-900/40 border border-slate-800/80 hover:border-primary-50/30 transition-colors duration-300">
+                <div
+                  class="p-5 rounded-xl bg-slate-900/40 border border-slate-800/80 hover:border-primary-50/30 transition-colors duration-300">
                   <h4 class="font-outfit text-lg font-bold text-white mb-2 flex items-center gap-2">
                     <span class="w-2.5 h-2.5 rounded-full bg-primary-50 shadow-glow-primary"></span>
                     Missão
                   </h4>
                   <p class="text-sm text-slate-400 leading-relaxed font-light">
-                    Nossa missão é formar parcerias de longo prazo com clientes e fornecedores nas áreas de Telefonia, CFTV e demais tecnologias associadas.
+                    Nossa missão é formar parcerias de longo prazo com clientes e fornecedores nas áreas de Telefonia,
+                    CFTV e demais tecnologias associadas.
                   </p>
                 </div>
-                
+
                 <!-- Card Onde Atuamos -->
-                <div class="p-5 rounded-xl bg-slate-900/40 border border-slate-800/80 hover:border-secundary-50/30 transition-colors duration-300">
+                <div
+                  class="p-5 rounded-xl bg-slate-900/40 border border-slate-800/80 hover:border-secundary-50/30 transition-colors duration-300">
                   <h4 class="font-outfit text-lg font-bold text-white mb-2 flex items-center gap-2">
                     <span class="w-2.5 h-2.5 rounded-full bg-secundary-50 shadow-glow-secundary"></span>
                     Onde Atuamos
                   </h4>
                   <p class="text-sm text-slate-400 leading-relaxed font-light">
-                    Atuamos desde 1986 em todo o Brasil oferecendo Soluções Profissionais em Telefonia, Sistemas Profissionais de Segurança CFTV e Soluções Integradas de Tecnologia.
+                    Atuamos desde 1986 em todo o Brasil oferecendo Soluções Profissionais em Telefonia, Sistemas
+                    Profissionais de Segurança CFTV e Soluções Integradas de Tecnologia.
                   </p>
                 </div>
               </div>
@@ -459,8 +410,10 @@
 
     <!-- Seção: Serviços -->
     <section id="servicos" class="py-24 bg-brand-dark relative overflow-hidden" data-aos="fade-up">
-      <div class="absolute inset-0 bg-[linear-gradient(to_right,#1f293705_1px,transparent_1px),linear-gradient(to_bottom,#1f293705_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
-      
+      <div
+        class="absolute inset-0 bg-[linear-gradient(to_right,#1f293705_1px,transparent_1px),linear-gradient(to_bottom,#1f293705_1px,transparent_1px)] bg-[size:4rem_4rem]">
+      </div>
+
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="text-center max-w-3xl mx-auto mb-16">
           <span class="inline-block text-xs md:text-sm font-semibold tracking-widest text-primary-30 uppercase mb-3">
@@ -470,16 +423,20 @@
             Nossos Serviços
           </h2>
           <p class="text-slate-400 text-base sm:text-lg font-light leading-relaxed">
-            Soluções corporativas completas sob medida para impulsionar a infraestrutura técnica e de segurança da sua empresa.
+            Soluções corporativas completas sob medida para impulsionar a infraestrutura técnica e de segurança da sua
+            empresa.
           </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <!-- Card 1: Instalação e Redes -->
-          <div class="card-border-glow-primary shadow-glow-primary transition-all duration-350 hover:-translate-y-2 flex" data-aos="fade-up" data-aos-delay="100">
+          <div
+            class="card-border-glow-primary shadow-glow-primary transition-all duration-350 hover:-translate-y-2 flex"
+            data-aos="fade-up" data-aos-delay="100">
             <div class="p-8 flex flex-col justify-between w-full h-full min-h-[350px]">
               <div>
-                <div class="inline-flex items-center justify-center p-4 bg-primary-50/10 rounded-2xl mb-6 border border-primary-50/20 text-primary-30">
+                <div
+                  class="inline-flex items-center justify-center p-4 bg-primary-50/10 rounded-2xl mb-6 border border-primary-50/20 text-primary-30">
                   <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
                     <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
@@ -489,13 +446,16 @@
                 </div>
                 <h3 class="font-outfit text-xl font-bold text-white mb-4">Instalação e Integração</h3>
                 <p class="text-slate-400 text-sm leading-relaxed font-light">
-                  Venda e Instalação de centrais telefônicas PABX, câmeras de segurança CFTV, Instalação de rede de computadores, Sistemas Wi-Fi e demais tecnologias.
+                  Venda e Instalação de centrais telefônicas PABX, câmeras de segurança CFTV, Instalação de rede de
+                  computadores, Sistemas Wi-Fi e demais tecnologias.
                 </p>
               </div>
               <div class="mt-8">
-                <a href="#contato-form" class="inline-flex items-center text-primary-30 hover:text-primary-50 font-semibold group/btn transition-colors text-sm">
+                <a href="#contato-form"
+                  class="inline-flex items-center text-primary-30 hover:text-primary-50 font-semibold group/btn transition-colors text-sm">
                   Solicitar Solução
-                  <svg class="w-4 h-4 ml-1.5 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <svg class="w-4 h-4 ml-1.5 transition-transform duration-200 group-hover/btn:translate-x-1"
+                    fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                     <path d="m9 18 6-6-6-6"></path>
                   </svg>
                 </a>
@@ -504,23 +464,31 @@
           </div>
 
           <!-- Card 2: Laboratório Técnico Panasonic -->
-          <div class="card-border-glow-secundary shadow-glow-secundary transition-all duration-350 hover:-translate-y-2 flex" data-aos="fade-up" data-aos-delay="200">
+          <div
+            class="card-border-glow-secundary shadow-glow-secundary transition-all duration-350 hover:-translate-y-2 flex"
+            data-aos="fade-up" data-aos-delay="200">
             <div class="p-8 flex flex-col justify-between w-full h-full min-h-[350px]">
               <div>
-                <div class="inline-flex items-center justify-center p-4 bg-secundary-50/10 rounded-2xl mb-6 border border-secundary-50/20 text-secundary-70">
+                <div
+                  class="inline-flex items-center justify-center p-4 bg-secundary-50/10 rounded-2xl mb-6 border border-secundary-50/20 text-secundary-70">
                   <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                    <path
+                      d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                    </path>
                   </svg>
                 </div>
                 <h3 class="font-outfit text-xl font-bold text-white mb-4">Laboratório Panasonic</h3>
                 <p class="text-slate-400 text-sm leading-relaxed font-light">
-                  Laboratório técnico autorizado Panasonic especializado no conserto de centrais PABX e sistemas de segurança CFTV.
+                  Laboratório técnico autorizado Panasonic especializado no conserto de centrais PABX e sistemas de
+                  segurança CFTV.
                 </p>
               </div>
               <div class="mt-8">
-                <a href="#contato-form" class="inline-flex items-center text-secundary-70 hover:text-secundary-50 font-semibold group/btn transition-colors text-sm">
+                <a href="#contato-form"
+                  class="inline-flex items-center text-secundary-70 hover:text-secundary-50 font-semibold group/btn transition-colors text-sm">
                   Orçamento de Reparo
-                  <svg class="w-4 h-4 ml-1.5 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <svg class="w-4 h-4 ml-1.5 transition-transform duration-200 group-hover/btn:translate-x-1"
+                    fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                     <path d="m9 18 6-6-6-6"></path>
                   </svg>
                 </a>
@@ -529,10 +497,13 @@
           </div>
 
           <!-- Card 3: Treinamentos Técnicos -->
-          <div class="card-border-glow-primary shadow-glow-primary transition-all duration-350 hover:-translate-y-2 flex" data-aos="fade-up" data-aos-delay="300">
+          <div
+            class="card-border-glow-primary shadow-glow-primary transition-all duration-350 hover:-translate-y-2 flex"
+            data-aos="fade-up" data-aos-delay="300">
             <div class="p-8 flex flex-col justify-between w-full h-full min-h-[350px]">
               <div>
-                <div class="inline-flex items-center justify-center p-4 bg-primary-50/10 rounded-2xl mb-6 border border-primary-50/20 text-primary-30">
+                <div
+                  class="inline-flex items-center justify-center p-4 bg-primary-50/10 rounded-2xl mb-6 border border-primary-50/20 text-primary-30">
                   <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
                     <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
@@ -544,9 +515,11 @@
                 </p>
               </div>
               <div class="mt-8">
-                <a href="#contato-form" class="inline-flex items-center text-primary-30 hover:text-primary-50 font-semibold group/btn transition-colors text-sm">
+                <a href="#contato-form"
+                  class="inline-flex items-center text-primary-30 hover:text-primary-50 font-semibold group/btn transition-colors text-sm">
                   Agendar Treinamento
-                  <svg class="w-4 h-4 ml-1.5 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <svg class="w-4 h-4 ml-1.5 transition-transform duration-200 group-hover/btn:translate-x-1"
+                    fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                     <path d="m9 18 6-6-6-6"></path>
                   </svg>
                 </a>
@@ -569,7 +542,8 @@
           <!-- Estatísticas Grid (Layout Responsivo Avançado no Desktop) -->
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12 flex-grow">
             <!-- Estatística 1 -->
-            <div class="flex flex-col items-center lg:items-start p-8 sm:p-6 bg-white/5 border border-white/10 rounded-2xl shadow-lg transform transition duration-300 hover:scale-105 w-full"
+            <div
+              class="flex flex-col items-center lg:items-start p-8 sm:p-6 bg-white/5 border border-white/10 rounded-2xl shadow-lg transform transition duration-300 hover:scale-105 w-full"
               data-aos="fade-up" data-aos-delay="100">
               <div class="bg-white/10 p-3.5 rounded-2xl mb-4 border border-white/10 shadow-lg">
                 <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -578,12 +552,14 @@
                   <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"></path>
                 </svg>
               </div>
-              <span class="font-outfit text-4xl font-extrabold tracking-tight mb-1">+<span class="counter" data-target="40">0</span></span>
+              <span class="font-outfit text-4xl font-extrabold tracking-tight mb-1">+<span class="counter"
+                  data-target="40">0</span></span>
               <span class="text-primary-30 font-medium text-sm">Anos de Mercado</span>
             </div>
 
             <!-- Estatística 2 -->
-            <div class="flex flex-col items-center lg:items-start p-8 sm:p-6 bg-white/5 border border-white/10 rounded-2xl shadow-lg transform transition duration-300 hover:scale-105 w-full"
+            <div
+              class="flex flex-col items-center lg:items-start p-8 sm:p-6 bg-white/5 border border-white/10 rounded-2xl shadow-lg transform transition duration-300 hover:scale-105 w-full"
               data-aos="fade-up" data-aos-delay="200">
               <div class="bg-white/10 p-3.5 rounded-2xl mb-4 border border-white/10 shadow-lg">
                 <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -600,7 +576,8 @@
             </div>
 
             <!-- Estatística 3 -->
-            <div class="flex flex-col items-center lg:items-start p-8 sm:p-6 bg-white/5 border border-white/10 rounded-2xl shadow-lg transform transition duration-300 hover:scale-105 w-full"
+            <div
+              class="flex flex-col items-center lg:items-start p-8 sm:p-6 bg-white/5 border border-white/10 rounded-2xl shadow-lg transform transition duration-300 hover:scale-105 w-full"
               data-aos="fade-up" data-aos-delay="300">
               <div class="bg-white/10 p-3.5 rounded-2xl mb-4 border border-white/10 shadow-lg">
                 <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -611,7 +588,8 @@
                   <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                 </svg>
               </div>
-              <span class="font-outfit text-4xl font-extrabold tracking-tight mb-1">+<span class="counter" data-target="10">0</span></span>
+              <span class="font-outfit text-4xl font-extrabold tracking-tight mb-1">+<span class="counter"
+                  data-target="10">0</span></span>
               <span class="text-primary-30 font-medium text-sm">Clientes Atendidos</span>
             </div>
           </div>
@@ -809,7 +787,8 @@
                   </div>
                   <div>
                     <span class="block text-xs text-slate-500 font-mono">TELEFONE PRINCIPAL</span>
-                    <span class="text-sm font-semibold text-white group-hover:text-secundary-70 transition-colors">(11) 2842-3520</span>
+                    <span class="text-sm font-semibold text-white group-hover:text-secundary-70 transition-colors">(11)
+                      2842-3520</span>
                   </div>
                 </a>
 
@@ -825,7 +804,8 @@
                   </div>
                   <div>
                     <span class="block text-xs text-slate-500 font-mono">TELEFONE AUXILIAR</span>
-                    <span class="text-sm font-semibold text-white group-hover:text-secundary-70 transition-colors">(11) 3872-3520</span>
+                    <span class="text-sm font-semibold text-white group-hover:text-secundary-70 transition-colors">(11)
+                      3872-3520</span>
                   </div>
                 </a>
               </div>
@@ -919,26 +899,41 @@
           <p class="text-xs mt-1">Rua Duílio, 391 - Água Branca</p>
           <p class="text-xs">São Paulo / SP - CEP: 05043-020</p>
         </div>
-        
+
         <!-- Coluna 2: Contatos & Redes Sociais -->
         <div class="flex flex-col md:items-center justify-center gap-2 text-xs">
-          <p>Fones: <a href="tel:+551128423520" class="text-slate-400 hover:text-white transition-colors">+55 (11) 2842-3520</a> / <a href="tel:+551138723520" class="text-slate-400 hover:text-white transition-colors">(11) 3872-3520</a></p>
-          <p>E-mail: <a href="mailto:wmx.contato@wmx.com.br" class="text-slate-400 hover:text-white transition-colors">wmx.contato@wmx.com.br</a></p>
-          
+          <p>Fones: <a href="tel:+551128423520" class="text-slate-400 hover:text-white transition-colors">+55 (11)
+              2842-3520</a> / <a href="tel:+551138723520" class="text-slate-400 hover:text-white transition-colors">(11)
+              3872-3520</a></p>
+          <p>E-mail: <a href="mailto:wmx.contato@wmx.com.br"
+              class="text-slate-400 hover:text-white transition-colors">wmx.contato@wmx.com.br</a></p>
+
           <!-- Redes Sociais -->
           <div class="flex space-x-4 mt-2">
-            <a href="https://www.facebook.com/wmxtecnologia" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors" aria-label="Facebook">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+            <a href="https://www.facebook.com/wmxtecnologia" target="_blank" rel="noopener noreferrer"
+              class="text-slate-400 hover:text-white transition-colors" aria-label="Facebook">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+              </svg>
             </a>
-            <a href="https://www.instagram.com/wmxtecnologia" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors" aria-label="Instagram">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204 013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            <a href="https://www.instagram.com/wmxtecnologia" target="_blank" rel="noopener noreferrer"
+              class="text-slate-400 hover:text-white transition-colors" aria-label="Instagram">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204 013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
             </a>
-            <a href="https://www.linkedin.com/in/silvia-malian/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors" aria-label="LinkedIn">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            <a href="https://www.linkedin.com/in/silvia-malian/" target="_blank" rel="noopener noreferrer"
+              class="text-slate-400 hover:text-white transition-colors" aria-label="LinkedIn">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+              </svg>
             </a>
           </div>
         </div>
-        
+
         <!-- Coluna 3: Copyright e Termos -->
         <div class="flex flex-col md:items-end justify-start gap-3 text-xs">
           <p class="text-xs">
@@ -958,10 +953,12 @@
     class="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20ba5a] text-white p-4 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 flex items-center justify-center group focus-ring"
     aria-label="Fale conosco no WhatsApp">
     <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
-      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm5.835-3.266l.33.196c1.761 1.045 3.776 1.599 5.824 1.6 5.546 0 10.058-4.51 10.062-10.063.002-2.69-1.047-5.22-2.951-7.127C17.207 3.435 14.675 2.38 12.012 2.38c-5.551 0-10.065 4.51-10.069 10.064-.001 2.017.525 3.993 1.522 5.734l.222.386-.98 3.581 3.666-.961zm13.11-6.937c-.317-.159-1.879-.926-2.167-1.031-.287-.104-.496-.158-.704.158-.208.318-.807.926-.99 1.138-.182.211-.365.239-.682.08-1.883-.943-3.111-1.862-4.08-3.522-.258-.441.258-.41.736-1.369.08-.16.04-.299-.02-.418-.06-.12-.496-1.196-.682-1.642-.18-.435-.363-.376-.496-.382-.128-.006-.275-.007-.423-.007s-.387.056-.588.275c-.201.219-.77.752-.77 1.833 0 1.082.788 2.128.898 2.27.11.143 1.55 2.368 3.754 3.322 2.203.953 2.203.636 2.606.6.403-.036 1.879-.767 2.143-1.468.263-.7.263-1.3.184-1.426-.079-.127-.288-.207-.604-.366z"/>
+      <path
+        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm5.835-3.266l.33.196c1.761 1.045 3.776 1.599 5.824 1.6 5.546 0 10.058-4.51 10.062-10.063.002-2.69-1.047-5.22-2.951-7.127C17.207 3.435 14.675 2.38 12.012 2.38c-5.551 0-10.065 4.51-10.069 10.064-.001 2.017.525 3.993 1.522 5.734l.222.386-.98 3.581 3.666-.961zm13.11-6.937c-.317-.159-1.879-.926-2.167-1.031-.287-.104-.496-.158-.704.158-.208.318-.807.926-.99 1.138-.182.211-.365.239-.682.08-1.883-.943-3.111-1.862-4.08-3.522-.258-.441.258-.41.736-1.369.08-.16.04-.299-.02-.418-.06-.12-.496-1.196-.682-1.642-.18-.435-.363-.376-.496-.382-.128-.006-.275-.007-.423-.007s-.387.056-.588.275c-.201.219-.77.752-.77 1.833 0 1.082.788 2.128.898 2.27.11.143 1.55 2.368 3.754 3.322 2.203.953 2.203.636 2.606.6.403-.036 1.879-.767 2.143-1.468.263-.7.263-1.3.184-1.426-.079-.127-.288-.207-.604-.366z" />
     </svg>
     <!-- Tooltip -->
-    <span class="absolute right-16 bg-slate-900 border border-slate-800 text-white text-xs font-semibold px-3 py-1.5 rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap">
+    <span
+      class="absolute right-16 bg-slate-900 border border-slate-800 text-white text-xs font-semibold px-3 py-1.5 rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap">
       Fale com a WMX
     </span>
   </a>
