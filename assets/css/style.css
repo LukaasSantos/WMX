@@ -39,26 +39,80 @@
 
 .card-border-glow-primary {
   position: relative;
-  background: linear-gradient(135deg, rgba(128, 128, 251, 0.2) 0%, rgba(51, 51, 249, 0.1) 100%);
+  background: linear-gradient(135deg, rgba(128, 128, 251, 0.2) 0%, rgba(51, 51, 249, 0.05) 100%);
   padding: 1px;
   border-radius: 1rem;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-border-glow-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(800px circle at var(--mouse-x, 0px) var(--mouse-y, 0px), rgba(128, 128, 251, 0.35), transparent 40%);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.card-border-glow-primary:hover::before {
+  opacity: 1;
 }
 
 .card-border-glow-primary>div {
   background: #0f1422;
   border-radius: 0.95rem;
+  position: relative;
+  z-index: 2;
+  transition: background-color 0.3s ease;
+}
+
+.card-border-glow-primary:hover > div {
+  background: #11182c;
 }
 
 .card-border-glow-secundary {
   position: relative;
-  background: linear-gradient(135deg, rgba(253, 146, 77, 0.2) 0%, rgba(252, 99, 0, 0.1) 100%);
+  background: linear-gradient(135deg, rgba(253, 146, 77, 0.2) 0%, rgba(252, 99, 0, 0.05) 100%);
   padding: 1px;
   border-radius: 1rem;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-border-glow-secundary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(800px circle at var(--mouse-x, 0px) var(--mouse-y, 0px), rgba(253, 146, 77, 0.35), transparent 40%);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.card-border-glow-secundary:hover::before {
+  opacity: 1;
 }
 
 .card-border-glow-secundary>div {
   background: #0f1422;
   border-radius: 0.95rem;
+  position: relative;
+  z-index: 2;
+  transition: background-color 0.3s ease;
+}
+
+.card-border-glow-secundary:hover > div {
+  background: #11182c;
 }
 
 /* Acessibilidade */
