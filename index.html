@@ -37,12 +37,14 @@
   <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
   <link rel="apple-touch-icon" href="assets/img/favicon.svg">
 
-  <!-- Preconnect e Fontes do Google -->
+  <!-- Preconnect e Fontes do Google e CDNs -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
-    rel="stylesheet">
+    rel="stylesheet" media="print" onload="this.media='all'">
 
   <!-- Tailwind CSS Play CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -109,8 +111,8 @@
   <!-- AOS.js (Animate On Scroll) -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 
-  <!-- Preload do Fundo do Hero (Melhoria do LCP) -->
-  <link rel="preload" as="image" href="assets/img/hero-bg.png" fetchpriority="high">
+  <!-- Preload do Fundo do Hero (Apenas Desktop para poupar banda no Mobile) -->
+  <link rel="preload" as="image" href="assets/img/hero-bg.png" fetchpriority="high" media="(min-width: 1024px)">
 
   <!-- Scripts Interativos Diferidos (Não bloqueiam renderização) -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>

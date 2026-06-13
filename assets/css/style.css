@@ -120,3 +120,9 @@
   outline: 2px solid #818cf8;
   outline-offset: 4px;
 }
+
+/* Performance: content-visibility para acelerar renderização mobile */
+section:not(#main-content > section:first-of-type) {
+  content-visibility: auto;
+  contain-intrinsic-size: 500px;
+}
