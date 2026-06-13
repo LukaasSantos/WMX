@@ -94,3 +94,41 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// Contador Animado (Stats Counter)
+document.addEventListener('DOMContentLoaded', () => {
+  const counters = document.querySelectorAll('.counter');
+  const speed = 100; // O tempo de execução da animação (quanto menor, mais rápido)
+
+  const startCounter = (counter) => {
+    const updateCount = () => {
+      const target = +counter.getAttribute('data-target');
+      const count = +counter.innerText;
+      const inc = Math.ceil(target / speed);
+
+      if (count < target) {
+        counter.innerText = count + inc > target ? target : count + inc;
+        setTimeout(updateCount, 30);
+      } else {
+        counter.innerText = target;
+      }
+    };
+    updateCount();
+  };
+
+  const observerOptions = {
+    threshold: 0.5
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const counter = entry.target;
+        startCounter(counter);
+        observer.unobserve(counter);
+      }
+    });
+  }, observerOptions);
+
+  counters.forEach(counter => observer.observe(counter));
+});
+
